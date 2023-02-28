@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>산들해반찬</title>
+<link href="css/sub.css" rel="stylesheet">
+<link href="css/common.css" rel="stylesheet">
+<link href="css/reset.css" rel="stylesheet">
+<style>
+  /*메인*/
+  #sub_content {width:100%; height:9600px; padding:50px 0px 0px; background-color: darkslategrey; margin:0 auto;}
+
+  /*메인이미지*/
+  #mainimg {width:1160px; height:550px; background-color: cadetblue; margin:0 auto;}
+  #mainimg > .mainimgbox {width:390px; height:550px; background-color: brown; float:left;}
+  #mainimg > .textbox {width:550px; height:550px; background-color: aliceblue; float:right;}
+  #mainimg > .textbox > .t1,.d1,.d2,.d3,.d4,.d5,.d6,.checklist {width:550px; height:60px; background-color:aquamarine; float:right; padding:0px 0px 15px; margin:0px 0px 0px 0px;}
+  #mainimg > .textbox > .t1 > tr,.d1 {margin:0px 0px 0px 0px; background-color: beige; height: 120px;}
+  #mainimg > .textbox > .t1 > tr,.d1 > td {display: block;}
+  #mainimg > .textbox > .t1 > tr,.d1 > td > h3 {font-size: 31px; color:#303030; font-weight: bold;}
+  #mainimg > .textbox > .t1 > tr,.d1 > td > p {padding:35px 0px 0px; font-size:16px; color: #828282;}
+  #mainimg > .textbox > .t1 > tr,.d1 > td > h4 {padding:15px 0px 0px; color:#333; font-size: 22px;}
+
+  #mainimg > .textbox > .t1 > tr,.d2 {margin:0px 0px 0px 0px; background-color: aqua; border-top:1px solid #ddd ;}
+  #mainimg > .textbox > .t1 > tr,.d2 {height:65px;}
+  #mainimg > .textbox > .t1 > tr,.d2 > td {float: left;}
+  #mainimg > .textbox > .t1 > tr,.d2 > td > h3 {font-size:15px; margin:15px 0px 0px 0px; color: #666; font-weight: bold; width: 170px; height:25px; background-color:darkgoldenrod;}
+  #mainimg > .textbox > .t1 > tr,.d2 > td > h4 {margin:15px 0px 0px 0px; font-size:15px; color: #333;font-weight: bold; width: 380px; height:25px; background-color: #ddd; }
+  #mainimg > .textbox > .t1 > tr,.d2 > td > p {font-size:12px; color: #666; margin:0px 0px 0px 170px; line-height:14px;}
+
+  #mainimg > .textbox > .t1 > tr,.d3 {margin:0px 0px 0px 0px; background-color: aliceblue; border-top:1px solid #ddd ;}
+  #mainimg > .textbox > .t1 > tr,.d3 {height:30px;}
+  #mainimg > .textbox > .t1 > tr,.d3 > td {float: left;}
+  #mainimg > .textbox > .t1 > tr,.d3 > td > h3 {font-size:15px; color: #666; margin:15px 0px 0px 0px; font-weight: bold; width: 170px; height:25px;}
+  #mainimg > .textbox > .t1 > tr,.d3 > td > p {font-size:15px; color: #333; margin:15px 0px 0px 0px; font-weight: bold; width: 380px; height:25px;}
+
+  #mainimg > .textbox > .t1 > tr,.d4 {margin:0px 0px 0px 0px; background-color:antiquewhite; border-top:1px solid #ddd ;}
+  #mainimg > .textbox > .t1 > tr,.d4 {height:50px;}
+  #mainimg > .textbox > .t1 > tr,.d4 > td {float: left;}
+  #mainimg > .textbox > .t1 > tr,.d4 > td > h3 {font-size:15px; margin:15px 0px 0px 0px; color: #666; font-weight: bold; width: 170px; height:25px; background-color:darkgoldenrod;}
+  #mainimg > .textbox > .t1 > tr,.d4 > td > h4 {margin:15px 0px 0px 0px; font-size:15px; color: #333;font-weight: bold; width: 380px; height:25px; background-color: #ddd;}
+  #mainimg > .textbox > .t1 > tr,.d4 > td > p {font-size:12px; color: #666; margin:0px 0px 0px 170px; line-height:14px;}
+
+  #mainimg > .textbox > .t1 > tr,.checklist {width:550px; height:40px; background-color: cornflowerblue; float:right; padding:0px 0px 0px;}
+
+#mainimg > .textbox > .t1 > tr,.d5 {width:550px; height:50px; background-color:wheat; float:right; margin:35px 0px 15px;}
+#mainimg > .textbox > .t1 > tr,.d5 > td {float: right;}
+#mainimg > .textbox > .t1 > tr,.d5 > td > h4 {font-size: 15px; color: #303030; margin:37.5px 5px 0px 0px;}
+#mainimg > .textbox > .t1 > tr,.d5 > td > h3 {font-size:27px; font-weight: bold; margin:30px 15px 0px 0px; color: #303030;}
+#mainimg > .textbox > .t1 > tr,.d5 > td > h3 > span {font-size: 18px; color: #303030; margin:0px 0px 10px -10px;}
+
+
+  #mainimg > .textbox > .t1 > tr,.d6 {width:550px; height:52px; margin: 0px 0px 0px; background-color: darkgrey; float:right;}
+  #mainimg > .textbox > .t1 > tr,.d6 > td  > a > button {margin:10px 0px 0px 10px; font-size: 17px; background-color: #fff; color:#046142; width:260px; height:48px; border:1px solid #046142; border-radius:25px; font-weight: bold;}
+  #mainimg > .textbox > .t1 > tr,.d6 > td  > a > .f1 {background-color: #046142; color: #fff;}
+  #mainimg > .textbox > .t1 > tr,.d6 > td  > a > button:hover {cursor: pointer;}
+
+  /*추천반찬*/
+  #aa {width:1160px; height:130px; margin:0 auto;}
+  h2 {padding:80px 0px 26px; font-size:24px; font-weight: bold; color: #303030; background-color: #fff;}
+
+  #imgbox {width:1250px; height:360px;background-color: azure; margin:0 auto;} 
+  #imgbox > .imgs {width:205px; height:303px; background-color: #046142; float: left; margin:0px -11px 0px 45px; box-sizing: border-box;}
+  #imgbox > .imgs > img {width:205px; height:215px;}
+  #imgbox > .imgs > .textbox {width:205px; height:75px; background-color: antiquewhite; padding:13px 0px 0px 0px; float: left;}
+
+
+  /*목록*/
+  #list {width:1160px; height:152px; background-color: burlywood; margin:0 auto;}
+  #list > #listbox {width: 1160px; height:80px; background-color: aliceblue; margin:70px 0px 0px 0px; float: left; border-top:2px solid #046142;}
+  #list > #listbox > a > ul {width:290px; height:80px; background-color: beige; float: left;}
+  #list > #listbox > a > ul > li {text-align: center; margin:30px 0px 0px 0px; color:#828282; font-weight: bold; font-size:18px;}
+  #list > #listbox > a > ul:hover {background-color: #046142; color: #fff;}
+  #list > #listbox > a > ul > li:hover {color: #fff;}
+
+
+  #listimg {width:1160px; height:5000px; background-color: gold; padding:80px 0px 0px; margin:0 auto; border-top:1px solid #046142;}
+  #listimg > #img {width:820px; height:4440px; background-color: aqua; margin:0 auto;}
+  #listimg > #img > .img1 {height:440px; width:820px; background-color: antiquewhite;}
+  #listimg > #img > .img2 {height:1000px; width:820px; background-color: blueviolet; margin:30px 0px 0px 0px;}
+  #listimg > #img > .img3 {height:3000px; width:820px; background-color: aquamarine;}
+
+  /*상품상세정보*/
+  #deta {width:1160px; height:620px; background-color: chocolate; padding:123px 0px 0px; margin:0 auto; }
+  #deta > h1 {font-size:24px; color:#303030; font-weight: bold;}
+  #deta > .t2 {margin:20px 0px 0px 0px; line-height:30px; border-top:2px solid #474747;}
+  #deta > .t2 th {width:200px; background-color: #f7f7f7; text-align:left; padding:0px 0px 0px 15px; border:1px solid #ddd; font-size:15px; font-weight: bold;}
+  #deta > .t2 td {width:956px; border:1px solid #ddd; color:#515151; border-right: none; font-size: 13px; padding:0 0 0 10px;}
+
+
+
+  /*상품후기*/
+  #deta2 {width:1160px; height: 1090px; padding:110px 0px 0px; background-color: rgb(86, 107, 145); margin:0 auto;}
+  #deta2 > h1 {font-size:24px; padding:0px 0px 20px; color:#303030; font-weight: bold;}
+  #deta2 > .box2 {width:1160px; height:114px; background-color: bisque;}
+  #deta2 > .box3 {width:1160px; height:800px; background-color: cornsilk;}
+  #deta2 > .box3 > .t3 {margin:0 auto; width:1160px; height:770px; background-color: #046142;}
+  #deta2 > .box3 > .t3 th {font-size: 13px; padding:16px 0px 16px 0px; background-color: chocolate; height: 10px;}
+  #deta2 > .box3 > .t3 td { padding:22px 0px 0px 0px; background-color: #666; border-top: 2px solid #046142; text-align: center;} 
+  #deta2 > .box3 > .t3 .abox {background-color: aquamarine; width: 550px;}
+  #deta2 > .box3 > .t3 .cbox {padding:0px 0px 0px 0px; background-color: cadetblue; text-align: center;}
+  #deta2 > .box3 > .t3 .abox > .viewimg {width:90px; height:100px; background-color: cornflowerblue; margin:-35px 0px 0px 20px;}
+
+
+  /*주문/배송/취소*/
+  #deta3 {width:1160px; height:830px; background-color: aquamarine; margin:0 auto;}
+
+</style>
+</head>
+<body>
+<div id="header">
+
+  <div class="box">
+    <a href="#">회원가입하고 할인쿠폰 받아가세요!</a>
+  </div>
+
+  <div class="box2">
+
+    <div class="top">
+      <p>수도권 이외 지역 <span>택배배송</span></p>
+    </div>
+
+    <div class="login">
+      <ul>
+        <li><a href="#">로그인</a></li>
+        <li>|</li>
+        <li><a href="#"><span>회원가입</span></a></li>
+        <li>|</li>
+        <li><a href="#">배송안내</a></li>             
+      </ul>
+
+    </div>
+
+    <div id="logo">
+      <a href="#"><img src="img/logo.jpg" alt="asd"></a>
+    </div>
+  </div>
+
+  <nav>
+    <ul>
+      <li><a href="#">=</a></li>
+      <li><a href="#">모든반찬</a></li>
+      <li>|</li>
+      <li><a href="#">인기메뉴</a></li>
+      <li><a href="#">신메뉴</a></li>
+      <li><a href="#">브랜드소개</a></li>
+      <li><a href="#">이용가이드</a></li>         
+      <li><a href="#">커뮤니티</a></li>
+    </ul>
+
+    <div class="textbox">
+      <input type="image" src="img/icon2.jpg" alt="검색" class="image1">
+      <input type="image" src="img/icon.jpg" alt="검색" class="image2">
+      <input type="textbox" name="오늘 뭐먹지" class="textbox2" placeholder="오늘 뭐 먹지" autocomplete="off">
+
+    </div>
+  </nav>
+
+</div>
+
+
+
+
+<main id="sub">
+  <div id="sub_content">
+
+    <div id="mainimg">
+      <div class="mainimgbox">
+      <a href="#"><img src="" alt=""></a>
+      </div>
+      <div class="textbox">
+
+      <table class="t1">
+
+        <tr class="d1">
+      <td><h3>우렁된장찌개_1인분 (400g)</h3></td>
+      <td><p>#영양가득#국내산우렁이</p></td>
+      <td><h4>5,600원</h4></td>
+      </tr>
+
+      <tr class="d2">
+        <td><h3>배송</h3></td>
+        <td><h4>반찬배송</h4></td>
+        <td><p>23시 전 주문 시 내일 아침 7시 전 도착<br>
+        (대구,부산,울산 반찬배송 운영시간 별도 확인)</p></td>
+      </tr>
+
+      <tr class="d3">
+        <td><h3>판매자</h3></td>
+        <td><p>산들해반찬</p></td>
+      </tr>
+
+      <tr class="d4">
+        <td><h3>포장타입</h3></td>
+        <td><h4>냉동 (종이포장)</h4></td>
+        <td><p>택배배송은 에코 포장이 스티로폼으로 대체됩니다.</p></td>
+      </tr>
+
+      <tr class="checklist">
+        <td><h3>구매수량</h3></td>
+        <td></td>
+      </tr>
+
+      <tr class="d5">
+        <td><h3>5,600 <span>원</span></h3></td>
+        <td><h4>총 상품 금액:</h4></td>
+      </tr>
+
+      <tr class="d6">
+        <td><a href="#"><button>장바구니</button></a></td>
+        <td><a href="#"><button class="f1">바로 구매</button></a></td>
+      </tr>
+
+      
+      </table>
+
+      </div>
+    </div>
+
+
+    <div id="aa">
+    <h2>추천반찬</h2>
+    </div>
+
+    <div id="imgbox">
+      
+      <div class="imgs">
+        <img src="" alt="">
+        <div class="textbox">
+          <div class="text">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="imgs">
+        <img src="" alt="">
+        <div class="textbox">
+          <div class="text">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="imgs">
+        <img src="" alt="">
+        <div class="textbox">
+          <div class="text">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="imgs">
+        <img src="" alt="">
+        <div class="textbox">
+          <div class="text">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="imgs">
+        <img src="" alt="">
+        <div class="textbox">
+          <div class="text">
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    
+
+    <div id="list">
+      <div id="listbox">
+
+        <a href="#content1"><ul class="q1">
+          <li>반찬설명</li>
+        </ul></a>
+
+        <a href="#content2"><ul class="q2">
+          <li>상세정보</li>
+        </ul></a>
+
+        <a href="#content3"><ul class="q3">
+          <li>상품후기23</li>
+        </ul></a>
+
+        <a href="#content4"><ul class="q4">
+          <li>주문/배송/취소</li>
+        </ul></a>
+
+      </div>
+    </div>
+    <div id="listimg">
+      <div id="img">
+
+        <div class="img1">
+        <img src="" alt="">
+        </div>
+
+        <div class="img2">
+        <img src="" alt="">
+        </div>
+
+        <div class="img3">
+        <img src="" alt="">
+        </div>
+
+    </div>
+
+    <div id="deta">
+      <h1>상품상세정보</h1>
+
+      <table class="t2">
+        <tr>
+          <th>제품명</th>
+          <td>우렁된장찌개_1인용</td>
+        </tr>
+
+        <tr>
+          <th>용량</th>
+          <td>400g</td>
+        </tr>
+        
+        <tr>
+          <th>유통기한</th>
+          <td>제조일로부터180일</td>
+        </tr>
+
+        <tr>
+          <th>원재료명 및 함량</th>
+          <td>"산들해 멸치다시육수[멸치(국내산),다시마(국내산)],논우렁이7.8%(국내산),애호박(국내산),감자(국내산)
+            ,양파,된장2.6%,건표고버섯,대파,다진마늘,청양고추,고춧가루-대두,밀 함유"</td>
+        </tr>
+
+        <tr>
+          <th>보관방법</th>
+          <td>냉동보관(-18℃ 이하) / 이미 냉동된 제품이므로 해동 후 재냉동 시키지 마세요.</td>
+        </tr>
+
+        <tr>
+          <th>식품의 유형</th>
+          <td>즉석조리식품 / 가열하여 섭취하는 냉동식품</td>
+        </tr>
+
+        <tr>
+          <th>포장재질</th>
+          <td>용기(PP), 실링(PE)</td>
+        </tr>
+        
+        <tr>
+          <th>제조원 및 판매원</th>
+          <td>주식회사 산들해 / 서울시 양천구 목동서로 349, 지하 1층</td>
+        </tr>
+
+        <tr>
+          <th>알레르기 식품</th>
+          <td>"본 제품은 게,새우,고등어,땅콩,우유,메밀,돼지고기,복숭아,토마토,잣,키위,닭고기,조개류(전
+            복,홍합 포함),오징어,쇠고기를 사용한 제품과 같은 제조 시설에서 제조하고 있습니다."</td>
+        </tr>
+
+        <tr>
+          <th>부정/불량식품 신고표시</th>
+          <td>불량 부정식품 신고번호는 국번없이 1399</td>
+        </tr>
+
+        <tr>
+          <th>소비자분쟁해결기준</th>
+          <td>본 제품은 공정거래위원회 고시 소비자분쟁해결기준에 의거 교환 또는 환불 보상받으실 수 있습니다.</td>
+        </tr>
+
+        <tr>
+          <th>소비자 상담 관련 전화번호</th>
+          <td>1577-1759</td>
+        </tr>
+
+        <tr>
+          <th>품목보고번호</th>
+          <td>2020011539383</td>
+        </tr>
+
+      </table>
+    </div>
+    <div id="deta2">
+      <h1>상품후기<span>(총23건의 리뷰)</span></h1>
+      <div class="box2">
+        
+      </div>
+
+      <div class="box3">
+        <ul>
+          <li>도움 많은 순</li>
+          <li>|</li>
+          <li>최근 등록 순</li>
+          <li>|</li>
+          <li>평점 높은 순</li>
+        </ul>
+        <table class="t3">
+          <tr>
+            <th>번호</th>
+            <th>내용</th>
+            <th>작성자</th>
+            <th>작성일</th>
+            <th>별점</th>
+            <th>조회</th>
+          </tr>
+
+          <tr>
+
+            <td>23</td>
+            <td class="abox">
+              <div class="viewimg">
+              <img src="" alt="">
+              </div>
+            </td>
+            <td>한여*</td>
+            <td class="cbox">2022.03.21</td>
+            <td>123</td>
+            <td>17</td>
+          </tr>
+
+          <tr>
+            <td>23</td>
+            <td class="abox">
+              <div class="viewimg">
+              <img src="" alt="">
+              </div>
+            </td>
+            <td>234</td>
+            <td class="cbox">35453</td>
+            <td>123</td>
+            <td>1231231</td>
+          </tr>
+
+          <tr>
+            <td>23</td>
+            <td class="abox">
+              <div class="viewimg">
+              <img src="" alt="">
+              </div>
+            </td>
+            <td>234</td>
+            <td class="cbox">35453</td>
+            <td>123</td>
+            <td>1231231</td>
+          </tr>
+
+          <tr>
+            <td>23</td>
+            <td class="abox">
+              <div class="viewimg">
+              <img src="" alt="">
+              </div>
+            </td>
+            <td>234</td>
+            <td class="cbox">35453</td>
+            <td>123</td>
+            <td>1231231</td>
+          </tr>
+
+          <tr>
+            <td>23</td>
+            <td class="abox">
+              <div class="viewimg">
+              <img src="" alt="">
+              </div>
+            </td>
+            <td>234</td>
+            <td class="cbox">35453</td>
+            <td>123</td>
+            <td>1231231</td>
+          </tr>
+
+        </table>
+      </div>
+ 
+    </div>
+    <div id="deta3">
+
+    </div>
+ 
+  </div>
+</main>
+
+
+
+
+    <div id="footer2">
+      <div class="ww">
+      <a href="#"><h6>고객행복센터</h6></a>
+      
+      <div class="www">
+        <h1>1577-1759</h1>
+        <a href="#"><img src="img/www1.jpg" alt=""></a>
+        <div class="wwww">
+        <a href="#"><button>1:1문의하기</button></a>
+        </div>
+        <ul>
+          <li>월 ~ 금 : 9시 - 18시</li>
+          <li>점심시간 : 12시 30분 - 13시 30분</li>
+          <li>일요일 : 9시 - 12시 (토요일, 공휴일 휴무)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ww">
+      <a href="#"><h6>공지사항 <span>| 이벤트</span></h6></a>
+      
+      <div class="www">
+        <ul>
+          <a href="#"><li class="tlqkf"> <pre>2023년 3월1일 배송안내[삼일절]                          <span>2023-02-23</span></pre>  </li></a>
+          <a href="#"><li class="tlqkf"> <pre>리뷰적립금 x 2배 - 매일매일 따블!                        <span>2023-02-15</span></pre></li></a>
+          <a href="#"><li class="tlqkf"> <pre>2023년 설날 배송안내                                        <span>2023-01-10</span></pre></li></a>
+          <a href="#"><li class="tlqkf"> <pre>2023년 새해 배송안내 [ 신정 ]                             <span>2022-12-28</span></pre></li></a>
+        </ul>
+      </div>
+    </div>
+    <div class="ww">
+      <a href="#"><h6>산들해 모바일 앱</h6></a>
+      
+      <div class="www">
+        <h2>산들해 SNS 팔로우하여 소식 받으시고<br>
+          다양한 혜택 받아가세요~</h2>
+          <ul>
+        <li><a href="#"><img src="img/i-icon1.jpg" alt=""></a></li>
+        <li><a href="#"><img src="img/i-icon2.jpg" alt=""></a></li>
+      </ul>
+      </div>
+      
+    </div>
+    </div>
+  
+
+
+</div>
+<div id="footer">
+  <div class="q">
+  <div class="qq">
+  <ul>
+    <a href="#"><li>회사소개</li></a>
+    <li>|</li>
+    <a href="#"><li>이용약관</li></a>
+    <li>|</li>
+    <a href="#"><li>개인정보처리방침</li></a>
+    <li>|</li>
+    <a href="#"><li>이용안내</li></a>
+  </ul>
+</div>
+  <div class="qqq">
+    <ul>
+      <a href="#"><li>상호명 : 주식회사 산들해</li></a>
+      <li>|</li>
+      <a href="#"><li>대표자 : 이상경</li></a>
+      <li>|</li>
+      <a href="#"><li>사업자등록번호 : 724-86-01939 사업자번호확인</li></a>
+      <li>|</li>
+      <a href="#"><li>주소 : 서울특별시 양천구 목동서로 349 (센트럴프라자) 지하 1층, 개인정보보호책임자 : 이강섭
+        통신판매업신고번호 : 제2021-서울양천-2012호</li></a>
+      <li>|</li>
+      <a href="#"><li>TEL : 1577-1759</li></a>
+      <li>|</li>
+      <a href="#"><li> E-MAIL : sdhmarketing@naver.com</li></a>
+    </ul>
+    <p>COPYRIGHT© 2021 Hongsfood corp. ALL RIGHT RESERVED. HOSTING BY 엔에이치엔커머스(주). DESIGN BY 디자인위브</p>
+  </div>
+</div>
+</div>
+</body>
+</html>
